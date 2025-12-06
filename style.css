@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+body{
+    font-family: 'Lexend', Times, serif;
+    background-color: rgba(220,220,220);
+}
+
+.header{
+    text-align: center;
+    background-color: rgb(245,245,245);
+    padding: 1rem;
+    width: fit-content;
+    margin: 1.5rem auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.footer{
+    text-align: center;
+    background-color: rgb(245,245,245);
+    padding: 1rem;
+    width: fit-content;
+    margin: 1.5rem auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.upload-demo-el{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.menu-buttons{
+    text-align: center;
+    padding: 1rem 1rem;
+    background-color: rgba(245,245,245,0.8);
+    width: 20%;
+    margin: 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.demo-button, .upload-button{
+    width: 150px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.demo-button:hover, .upload-button:hover{
+    transform: scale(1.1);
+}
+
+#fileInput{
+    display: none;
+}
