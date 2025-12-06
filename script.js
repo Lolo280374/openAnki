@@ -3,6 +3,8 @@ const demoButton = document.getElementById('demo-button');
 const loadingStatus = document.getElementById('loading-status');
 const homeButtonsElement = document.querySelector('.upload-demo-el');
 
+lucide.createIcons();
+
 let SQL;
 initSqlJs({
     locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/${file}`

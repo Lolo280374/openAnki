@@ -62,3 +62,43 @@ body{
     font-weight: bold;
     margin: 1.5rem auto;
 }
+
+.flashcard-section{
+    display: none;
+}
+
+.flashcard-content{
+    text-align: center;
+    align-items: center;
+    background-color: rgb(245,245,245);
+    padding: 1rem;
+    width: fit-content;
+    margin: 1.5rem auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.flashcard-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.flashcard-buttons button{
+    background-color: rgb(245, 245, 245);
+    padding: 1rem 1rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: transform 0.2s ease;
+}
+
+.flashcard-buttons button:hover{
+    transform: scale(1.1);
+}
