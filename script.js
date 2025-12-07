@@ -24,6 +24,12 @@ initSqlJs({
     SQL = sql;
 });
 
+function renderLaTeX(){
+    if (window.MathJax){
+        MathJax.typesetPromise([flashcardContent]);
+    }
+}
+
 function processMedia(html){
     let processed = html;
     processed = processed.replace(/<img[^>]*src=["']([^"']+)["'][^>]*>/gi, (match, src) => {
@@ -40,6 +46,10 @@ function processMedia(html){
         }
         return match;
     });
+
+    processed = processed.replace(/\[latex\]/gi, '\\[').replace(/\[\/latex\]/gi, '\\]');
+    processed = processed.replace(/\[\$\$\]/gi, '\\[').replace(/\[\/\$\$\]/gi, '\\]');
+    processed = processed.replace(/\[\$\]/gi, '\\(').replace(/\[\/\$\]/gi, '\\)');
 
     return processed;
 }
@@ -142,6 +152,7 @@ function showCard(index){
     const card = currentDeck[index];
 
     flashcardContent.innerHTML = processMedia(card.Front);
+    renderLaTeX();
     flipFlashcardBtn.querySelector('span').textContent = 'flip card (to awnser)';
     updateTitle();
 }
@@ -153,6 +164,7 @@ function flipCard() {
 
     if (isFlipped){
         flashcardContent.innerHTML = processMedia(card.Back);
+        renderLaTeX();
         flipFlashcardBtn.querySelector('span').textContent = 'flip card (to front)';
 
     } else {
